@@ -1,0 +1,18 @@
+                 Outil 'Magie' de Tux Paint : Polygone rempli
+
+                          ### Groupe: Artistique ###
+
+           ## Auteur : Bill Kendrick <bill@newbreedsoftware.com> ##
+
+Place trois points ou plus connectés sur votre image pour former un polygone ;
+il sera rempli de la couleur choisie. (Relie le point final (rouge) au point
+initial (vert).)
+
+Cet outil permet de travailler en mode à main levée.
+
+Cet outil permet de choisir des couleurs.
+
+-------------------------------------------------------------------------------
+
+                               Tux Paint 0.9.35
+

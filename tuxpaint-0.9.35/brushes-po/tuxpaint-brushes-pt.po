@@ -1,0 +1,98 @@
+# Tuxpaint-brushes Portuguese translation.
+# Copyright (C) 2024-2024
+# This file is distributed under the same license as the Tuxpaint package.
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tuxpaint-brushes\n"
+"Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
+"POT-Creation-Date: 2024-10-21 06:46:00+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
+"Language-Team: \n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+
+#: ../data/brushes/acrylic.txt
+msgid "Paint with a blotty brush that looks like acrylic paint."
+msgstr "Pintar com um pincel que se pareça com tinta acrílica."
+
+#: ../data/brushes/arrow.txt
+msgid "The arrow points the direction you draw."
+msgstr "A seta indica a direção em que desenhas."
+
+#: ../data/brushes/arrow_triangles.txt
+msgid "The triangle points the direction you draw."
+msgstr "O triângulo aponta a direção que desenhaste."
+
+#: ../data/brushes/critter_dog.txt
+msgid "The dog chases where you draw."
+msgstr "O cão persegue onde desenhas."
+
+#: ../data/brushes/critter_kuroneko.txt
+msgid "The cat chases where you draw."
+msgstr "O gato persegue onde desenhas."
+
+#: ../data/brushes/critter_squirrel.txt
+msgid "The squirrel runs where you draw."
+msgstr "O esquilo corre para onde tu desenhas."
+
+#: ../data/brushes/fluff.txt ../data/brushes/fluff_gradient.txt
+msgid "Fluffy circles, great for drawing clouds."
+msgstr "Círculos fofos, óptimos para desenhar nuvens."
+
+#: ../data/brushes/footprints-human-shoes.txt
+msgid "Paint footsteps with shoes on your picture."
+msgstr "Pintar passos com sapatos no teu desenho."
+
+#: ../data/brushes/footprints-human.txt
+msgid "Paint barefoot footsteps on your picture."
+msgstr "Pintar passos de pés descalços no teu desenho."
+
+#: ../data/brushes/footprints-paws.txt
+msgid "Paint pawprints on your picture."
+msgstr "Pintar impressões de patas no teu desenho."
+
+#: ../data/brushes/impasto.txt
+msgid "Impasto (\"mixture\"), a technique that involves applying thick layers of paint, making brush strokes visible."
+msgstr ""
+
+#: ../data/brushes/inksplat.txt
+msgid "Paint random ink splats on your picture."
+msgstr "Pintar manchas de tinta aleatórias no teu desenho."
+
+#: ../data/brushes/lines-angled.txt
+msgid "Hash marks that draw perpendicular to the direction your painting."
+msgstr "Marcas de traço que desenham perpendicularmente à direção em que está a pintar."
+
+#: ../data/brushes/pencil.txt
+msgid "This draws a pencil effect that follows the direction of your strokes."
+msgstr "Isto desenha um efeito de lápis que segue a direção dos seus traços."
+
+#: ../data/brushes/sparkles.txt
+msgid "Paint with sparkles!"
+msgstr "Pintar com brilhantes!"
+
+#: ../data/brushes/spiral.txt
+msgid "Paint with a rotating spiral."
+msgstr "Pintar com uma espiral rotativa."
+
+#: ../data/brushes/spray.txt
+msgid "Paint with a random spray effect."
+msgstr "Pintar com um efeito de spray aleatório."
+
+#: ../data/brushes/tiny.txt
+msgid "A tiny, 1-by-1 pixel brush."
+msgstr "Um pincel minúsculo, de 1 por 1 pixel."
+
+#: ../data/brushes/vine.txt
+msgid "Draw with leafy vines."
+msgstr "Desenhar com trepadeiras."
+
+#: ../data/brushes/watercolor-texture.txt
+msgid "Watercolor splotches."
+msgstr ""

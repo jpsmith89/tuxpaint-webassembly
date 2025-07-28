@@ -1,0 +1,17 @@
+                      Tux Paint "Magic" Tool: Googly Eyes
+
+                            ### Group: Artistic ###
+
+            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+
+Draws a googly eye where you click. Drag to position the pupil. (If the Magic
+size feature is disabled, multiple "Googly Eyes" tools will be made available.)
+
+This tool is operated in a freehand fashion.
+
+This tool offers multiple size settings.
+
+-------------------------------------------------------------------------------
+
+                               Tux Paint 0.9.35
+

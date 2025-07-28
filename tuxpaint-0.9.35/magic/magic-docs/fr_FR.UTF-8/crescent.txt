@@ -1,0 +1,18 @@
+                    Outil 'Magie' de Tux Paint : Croissant
+
+                            ### Groupe: Peindre ###
+
+           ## Auteur : Bill Kendrick <bill@newbreedsoftware.com> ##
+
+Dessine l’une des différentes formes croissantes selon un angle choisi.
+
+Cet outil permet de travailler en mode à main levée.
+
+Cet outil permet de travailler avec plusieurs tailles.
+
+Cet outil permet de choisir des couleurs.
+
+-------------------------------------------------------------------------------
+
+                               Tux Paint 0.9.35
+

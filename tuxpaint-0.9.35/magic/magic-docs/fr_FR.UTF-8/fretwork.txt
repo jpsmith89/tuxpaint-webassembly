@@ -1,0 +1,17 @@
+                      Outil 'Magie' de Tux Paint : Frise
+
+                            ### Groupe: Peindre ###
+
+        ## Auteur : Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
+
+Exécute un dessin décoratif avec entrelacement qui ressemble à un travail de
+chantournage du bois.
+
+Cet outil permet à la fois de travailler avec un simple clic et à main levée.
+
+Cet outil permet de choisir des couleurs.
+
+-------------------------------------------------------------------------------
+
+                               Tux Paint 0.9.35
+

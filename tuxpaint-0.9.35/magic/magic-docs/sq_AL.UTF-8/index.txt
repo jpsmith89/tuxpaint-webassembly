@@ -1,0 +1,169 @@
+           Mjeti “Magjik” i Tux Paint-it: Listë e Mjeteve “Magjike”
+
+                               ### Shformime ###
+
+  * Turbulloje
+  * Mprehe
+  * Njollose
+  * Blloqe
+  * Shkumës
+  * Pikim
+  * Klonoje
+  * Shformim
+  * Puzzle
+  * Rrathë
+  * Rreze
+  * Skaje
+  * Me reliev
+  * Siluetë
+  * Sy peshku
+  * Valëzim
+  * Pllakë Xhami
+  * Mozaik i Parregullt
+  * Mozaik Gjashtëkëndor
+  * Mozaik Katror
+  * Mozaik
+  * TV
+  * TV (I ndriçuar)
+  * ASCII Typewriter
+  * ASCII Computer
+  * ASCII Color Computer
+  * Zhurmë
+  * Gjysmë-ton
+
+                            ### Filtra Ngjyrash ###
+
+  * Negativ
+  * E kundërta
+  * Ngope
+  * Çngope
+  * Errësoje
+  * Ndriçoje
+  * Hiqe Ngjyrën
+  * Mbaje Ngjyrën
+  * Ngjyrosje
+  * Ngjyrë dhe E bardhë
+  * Vizatimor
+  * Këmbim Ngjyrash
+  * Dither
+  * Dither (Keep Colors)
+  * Syze 3D
+  * Ndarje Ngjyrash
+  * Pamje e Dyfishtë
+  * Ngjyra Xor
+  * Çelje
+
+                          ### Shformime Vizatimi ###
+
+  * Pasqyroje
+  * Ktheje në anë tjetër
+  * Shift
+  * Zoom
+  * Zvogëlim Me Kuadrate
+  * Panele
+  * Ngut
+  * Perspektivë
+  * Pasqyrim
+  * Tërheqje
+  * Valë
+  * Valëza
+  * Kthim Faqeje
+  * Kaleido-4, Kaleido-6 dhe Kaleido-8
+  * Rotate
+
+                                ### Vizatim ###
+
+  * Tulla
+  * Spray Paint
+  * Ylber
+  * Ylber i Butë
+  * Cikël Ylberi
+  * Bukurshkrim
+  * Shirit
+  * Crescent
+  * Lëmim
+  * Spiral
+  * Square Spiral
+  * Concentric Circle
+  * Concentric Square
+  * Shkarravina
+  * Qerthuj
+  * Bonbone
+  * Shi
+  * Shkumë
+  * Bar
+  * Gëzof
+  * Pikselë
+  * Comic Dots
+  * Labirint
+  * Gdhendje
+  * Shina
+  * Bojë Metalike
+  * Pastë dhëmbësh
+  * Bojë e Njomë
+  * E çelët
+  * Hearts
+  * Sparkles
+  * Stars
+  * Fractal
+
+                          ### Vizatim Rregullsish ###
+
+  * Simetri Majtas/Djathtas
+  * Simetri Sipër/Poshtë
+  * Kaleidoskop
+  * Mostër
+  * Kuadrate
+  * Rozetë
+  * Pikaso
+  * Tessellation Pointy
+  * Tessellation Flat
+
+                           ### Zbukurime Fotoje ###
+
+  * Grila
+  * Fushë shahu
+  * Top Dëbore
+  * Flokë Bore
+
+                              ### Projections ###
+
+  * Vizatim me 1 Qendër
+  * Përzgjedhje e 1 Qendre
+  * Vizatim me 2 Qendra
+  * Përzgjedhje e 2 Qendrash
+  * Vizatim me 3 Qendra
+  * Përzgjedhje e 3 Qendrash
+  * Isometric Line
+  * Dimetric Draw
+  * Dimetric Select
+  * Trimetric Draw
+  * Trimetric Select
+  * Oblique Draw
+  * Oblique Select
+
+                               ### Artistike ###
+
+  * Lule
+  * Sy të Zgurdulluar
+  * Ylber i Njëmendtë
+  * Ylber ROYGBIV
+  * Rrufe
+  * Shtjellë
+  * Filled Polygon
+  * Skaje me Thurje
+  * Cep me Thurje
+  * V me Thurje
+  * Epitrochoid
+  * Epitrochoid Edge
+  * Epitrochoid Inside
+  * Epitrochoid Outside
+  * Hypotrochoid
+  * Hypotrochoid Edge
+  * Hypotrochoid Inside
+  * Hypotrochoid Outside
+
+-------------------------------------------------------------------------------
+
+                               Tux Paint 0.9.35
+

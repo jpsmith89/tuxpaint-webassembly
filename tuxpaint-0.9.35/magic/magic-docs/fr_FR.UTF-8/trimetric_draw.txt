@@ -1,0 +1,28 @@
+                Outil 'Magie' de Tux Paint : Dessin trimétrique
+
+                          ### Groupe: Projections ###
+
+           ## Auteur : Bill Kendrick <bill@newbreedsoftware.com> ##
+
+Cliquez et faites glisser pour dessiner en projection trimétrique. Les lignes
+seront verticales ou à deux angles choisis. Utilisez « Sélection trimétrique »
+pour ajuster les deux angles.
+
+Cet outil permet de travailler en mode à main levée.
+
+Cet outil permet de travailler avec plusieurs tailles.
+
+Cet outil permet de choisir des couleurs.
+
+Cet outil n'est pas disponible avec "complexité" (niveau d'expertise) réglé sur
+'Novice'.
+
+Voir aussi : Dessin 1 point, Choix 1 point, Dessin 2 points, Choix 2 points,
+Dessin à 3-Point, Choix 3-Point, Ligne isométrique, Dessin dimétrique, Dessin
+dimétrique, Choisir perspective trimétrique, Sélection oblique, Dessin oblique,
+& Perspective.
+
+-------------------------------------------------------------------------------
+
+                               Tux Paint 0.9.35
+

@@ -1,0 +1,17 @@
+                     Tux Paint "Magic" Tool: Checkerboard
+
+                      ### Group: Picture Decorations ###
+
+            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+
+This covers the entire canvas with a checkboard pattern using the current
+color. Drag to change the size of the squares.
+
+This tool is operated in a freehand fashion.
+
+This tool offers color choices.
+
+-------------------------------------------------------------------------------
+
+                               Tux Paint 0.9.35
+

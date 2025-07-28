@@ -1,0 +1,98 @@
+# Tuxpaint-brushes [Swedish] translation.
+# Copyright (C) 2024-2024
+# This file is distributed under the same license as the Tuxpaint package.
+# Daniel Nylander <github@danielnylander.se>, 2025
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tuxpaint-brushes\n"
+"Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
+"POT-Creation-Date: 2024-10-21 06:46:00+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Daniel Nylander <github@danielnylander.se>\n"
+"Language-Team: sv\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+
+#: ../data/brushes/acrylic.txt
+msgid "Paint with a blotty brush that looks like acrylic paint."
+msgstr "Måla med en fläckig pensel som ser ut som akrylfärg."
+
+#: ../data/brushes/arrow.txt
+msgid "The arrow points the direction you draw."
+msgstr "Pilen pekar i den riktning du ritar."
+
+#: ../data/brushes/arrow_triangles.txt
+msgid "The triangle points the direction you draw."
+msgstr "Triangeln pekar åt det håll du ritar."
+
+#: ../data/brushes/critter_dog.txt
+msgid "The dog chases where you draw."
+msgstr "Hunden jagar där du ritar."
+
+#: ../data/brushes/critter_kuroneko.txt
+msgid "The cat chases where you draw."
+msgstr "Katten jagar där du ritar."
+
+#: ../data/brushes/critter_squirrel.txt
+msgid "The squirrel runs where you draw."
+msgstr "Ekorren springer där du ritar."
+
+#: ../data/brushes/fluff.txt ../data/brushes/fluff_gradient.txt
+msgid "Fluffy circles, great for drawing clouds."
+msgstr "Fluffiga cirklar, perfekta för att rita moln."
+
+#: ../data/brushes/footprints-human-shoes.txt
+msgid "Paint footsteps with shoes on your picture."
+msgstr "Måla fotspår med skor på din bild."
+
+#: ../data/brushes/footprints-human.txt
+msgid "Paint barefoot footsteps on your picture."
+msgstr "Måla barfota fotspår på din bild."
+
+#: ../data/brushes/footprints-paws.txt
+msgid "Paint pawprints on your picture."
+msgstr "Måla tassavtryck på din bild."
+
+#: ../data/brushes/impasto.txt
+msgid "Impasto (\"mixture\"), a technique that involves applying thick layers of paint, making brush strokes visible."
+msgstr "Impasto (\"blandning\"), en teknik som innebär att tjocka lager av färg läggs på så att penseldragen blir synliga."
+
+#: ../data/brushes/inksplat.txt
+msgid "Paint random ink splats on your picture."
+msgstr "Måla slumpmässiga bläckstänk på din bild."
+
+#: ../data/brushes/lines-angled.txt
+msgid "Hash marks that draw perpendicular to the direction your painting."
+msgstr "Hashmärken som drar vinkelrätt mot den riktning du målar."
+
+#: ../data/brushes/pencil.txt
+msgid "This draws a pencil effect that follows the direction of your strokes."
+msgstr "Detta ger en blyertseffekt som följer riktningen på dina streck."
+
+#: ../data/brushes/sparkles.txt
+msgid "Paint with sparkles!"
+msgstr "Måla med glitter!"
+
+#: ../data/brushes/spiral.txt
+msgid "Paint with a rotating spiral."
+msgstr "Måla med en roterande spiral."
+
+#: ../data/brushes/spray.txt
+msgid "Paint with a random spray effect."
+msgstr "Måla med en slumpmässig sprayeffekt."
+
+#: ../data/brushes/tiny.txt
+msgid "A tiny, 1-by-1 pixel brush."
+msgstr "En pytteliten pensel på 1 x 1 bildpunkt."
+
+#: ../data/brushes/vine.txt
+msgid "Draw with leafy vines."
+msgstr "Rita med lummiga vinstockar."
+
+#: ../data/brushes/watercolor-texture.txt
+msgid "Watercolor splotches."
+msgstr "Vattenfärgsfläckar."

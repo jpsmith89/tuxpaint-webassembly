@@ -1,0 +1,23 @@
+                 Outil 'Magie' de Tux Paint : Couleur et blanc
+
+                       ### Groupe: Filtres couleurs ###
+
+             ## Auteur : Andrew Corcoran <akanewbie@gmail.com> ##
+
+Cela fait que votre image aura en partie deux couleurs : blanc, et une couleur
+choisie dans la palette — c.à.d. que si vous choisissez noir, vous obtiendrez
+une image noir et blanc, sans ombrage ni tramage (ceci est également connu
+comme un effet "seuil".)
+
+Cet outil permet à la fois de travailler avec un simple clic et à main levée.
+
+Cet outil permet de travailler avec plusieurs tailles.
+
+Cet outil permet de choisir des couleurs.
+
+Voir aussi : Tramage & Tramage (garder la couleur).
+
+-------------------------------------------------------------------------------
+
+                               Tux Paint 0.9.35
+

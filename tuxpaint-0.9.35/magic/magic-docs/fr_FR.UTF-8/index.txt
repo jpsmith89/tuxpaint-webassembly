@@ -1,0 +1,169 @@
+            Outil 'Magie' de Tux Paint : Liste des outils de Magie
+
+                              ### Distorsions ###
+
+  * Flou
+  * Affiner
+  * Baver
+  * Blocs
+  * Craie
+  * Goutte
+  * Cloner
+  * Distorsion
+  * Puzzle
+  * Cercles
+  * Raies
+  * Bords
+  * Relief
+  * Silhouette
+  * Oeil de poisson
+  * Ondes
+  * Carreau de verre
+  * Mosaïque irrégulière
+  * Mosaïque hexagonale
+  * Mosaïque carrée
+  * Mosaïque
+  * TV
+  * TV (brillant)
+  * Machine à écrire ASCI
+  * Calculateur ASCII
+  * Ordinateur Couleur ASCII
+  * Parasites
+  * Demi-teinte
+
+                           ### Filtres couleurs ###
+
+  * Négatif
+  * Complémentaire
+  * Saturer
+  * Désaturer
+  * Assombrir
+  * Éclaircir
+  * Enlever une couleur
+  * Garder une couleur
+  * Teinter
+  * Couleur et blanc
+  * B.D.
+  * Changement de couleur
+  * Tramage
+  * Tramage (garder la couleur)
+  * Lunettes 3D
+  * Sép des couleurs.
+  * Vision double
+  * Couleurs Xor
+  * Fleurir
+
+                        ### Déformations de l'image ###
+
+  * Miroir
+  * Inverer
+  * Déplace
+  * Zoom
+  * Zoom avec carreau
+  * Panneaux
+  * Rush
+  * Perspective
+  * Reflet
+  * Étirer
+  * Vagues
+  * Vaguelettes
+  * Plier
+  * Kaleido-4, Kaleido-6, et Kaleido-8
+  * Tourner
+
+                                ### Peindre ###
+
+  * Briques
+  * Peindre en spray
+  * Arc-en-ciel
+  * Arc-en-ciel doux
+  * Arc-en-ciel
+  * Calligraphie
+  * Ruban
+  * Croissant
+  * Doux
+  * Spirale
+  * Spirale carrée
+  * Cercle concentrique
+  * Carré concentrique
+  * Gribouillis
+  * Boucles
+  * Confettis
+  * Pluie
+  * Mousse
+  * Herbe
+  * Fourrure
+  * Pixels
+  * Points comiques
+  * Labyrinthe
+  * Frise
+  * Rails
+  * Peinture métallique
+  * Dentifrice
+  * Effet mouillé
+  * Lumière
+  * Coeurs
+  * Étincelles
+  * Étoile
+  * Fractale
+
+                           ### Peindre un motif ###
+
+  * Symétrie D/G
+  * Symétrie H/B
+  * Kaléidoscope
+  * Motif
+  * Tuiles
+  * Rosace
+  * Picasso
+  * Pavés pointus
+  * Pavés plats
+
+                        ### Décorations des images ###
+
+  * Store
+  * Damier
+  * Boule de neige
+  * Flocon de neige
+
+                              ### Projections ###
+
+  * Dessin 1 point
+  * Choix 1 point
+  * Dessin 2 points
+  * Choix 2 points
+  * Dessin à 3-Point
+  * Choix 3-Point
+  * Ligne isométrique
+  * Dessin dimétrique
+  * Dessin dimétrique
+  * Dessin trimétrique
+  * Choisir perspective trimétrique
+  * Dessin oblique
+  * Sélection oblique
+
+                              ### Artistique ###
+
+  * Fleur
+  * Yeux écarquillés
+  * Arc-en-ciel réel
+  * Arc-en-ciel simple
+  * Foudre
+  * Tornade
+  * Polygone rempli
+  * Ficelles sur les bords
+  * Ficelles dans les coins
+  * Ficelles V
+  * Épitrochoide
+  * Épitrochoïde de bord
+  * Épitrochoïde interne
+  * Épitrochoïde externe
+  * Hypotrochoïde
+  * Hypotrochoïde de bord
+  * Hypotrochoïde interne
+  * Hypotrochoïde externe
+
+-------------------------------------------------------------------------------
+
+                               Tux Paint 0.9.35
+

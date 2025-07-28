@@ -1,0 +1,92 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Tuxpaint\n"
+"Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
+"POT-Creation-Date: 2024-10-21 06:46:00+0000\n"
+"PO-Revision-Date: 2024-10-22 00:23+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../data/brushes/acrylic.txt
+msgid "Paint with a blotty brush that looks like acrylic paint."
+msgstr "Pinta amb un pinzell que sembla pintura acrílica."
+
+#: ../data/brushes/arrow.txt
+msgid "The arrow points the direction you draw."
+msgstr "La fletxa apunta en la direcció en que dibuixeu."
+
+#: ../data/brushes/arrow_triangles.txt
+msgid "The triangle points the direction you draw."
+msgstr "El triangle apunta en la direcció en que dibuixeu."
+
+#: ../data/brushes/critter_dog.txt
+msgid "The dog chases where you draw."
+msgstr "El gos va cap a on dibuixeu."
+
+#: ../data/brushes/critter_kuroneko.txt
+msgid "The cat chases where you draw."
+msgstr "El gat persegueix el ratolí."
+
+#: ../data/brushes/critter_squirrel.txt
+msgid "The squirrel runs where you draw."
+msgstr "L'esquirol corre cap a on dibuixeu."
+
+#: ../data/brushes/fluff.txt ../data/brushes/fluff_gradient.txt
+msgid "Fluffy circles, great for drawing clouds."
+msgstr "Cercles inflats, per dibuixar núvols..."
+
+#: ../data/brushes/footprints-human-shoes.txt
+msgid "Paint footsteps with shoes on your picture."
+msgstr "Pinta petjades de sabates en el dibuix."
+
+#: ../data/brushes/footprints-human.txt
+msgid "Paint barefoot footsteps on your picture."
+msgstr "Pinta traces de peus en el dibuix."
+
+#: ../data/brushes/footprints-paws.txt
+msgid "Paint pawprints on your picture."
+msgstr "Pinta un rastre d'animals en el dibuix."
+
+#: ../data/brushes/impasto.txt
+msgid "Impasto (\"mixture\"), a technique that involves applying thick layers of paint, making brush strokes visible."
+msgstr "Impasto, una tècnica que aplica capes gruixudes de pintura, fent visibles les pinzellades."
+
+#: ../data/brushes/inksplat.txt
+msgid "Paint random ink splats on your picture."
+msgstr "Pinta esquitxos de tinta aleatoris en el dibuix."
+
+#: ../data/brushes/lines-angled.txt
+msgid "Hash marks that draw perpendicular to the direction your painting."
+msgstr "Pinta ratlles fines perpendiculars a la direcció del traç."
+
+#: ../data/brushes/pencil.txt
+msgid "This draws a pencil effect that follows the direction of your strokes."
+msgstr "Dibuixa un efecte de llàpis que canvia amb la direcció del traç."
+
+#: ../data/brushes/sparkles.txt
+msgid "Paint with sparkles!"
+msgstr "Pinta amb guspires!."
+
+#: ../data/brushes/spiral.txt
+msgid "Paint with a rotating spiral."
+msgstr "Pinta amb una espiral que roda."
+
+#: ../data/brushes/spray.txt
+msgid "Paint with a random spray effect."
+msgstr "Pinta amb un efecte d'esprai aleatori."
+
+#: ../data/brushes/tiny.txt
+msgid "A tiny, 1-by-1 pixel brush."
+msgstr "Un pinzell petit d'un sol píxel."
+
+#: ../data/brushes/vine.txt
+msgid "Draw with leafy vines."
+msgstr "Dibuixa amb fulles de vinya."
+
+#: ../data/brushes/watercolor-texture.txt
+msgid "Watercolor splotches."
+msgstr "Taques de aquarel·la."

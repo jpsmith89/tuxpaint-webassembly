@@ -1,0 +1,22 @@
+                     Outil 'Magie' de Tux Paint : Tramage
+
+                       ### Groupe: Filtres couleurs ###
+
+           ## Auteur : Bill Kendrick <bill@newbreedsoftware.com> ##
+
+Cela fait que votre image aura en partie deux couleurs : blanc, et une couleur
+choisie dans la palette, en utilisant un tramage de points respectant les
+ombres du dessin original; plus l'ombre est sombre, plus il y aura de points..
+
+Cet outil permet à la fois de travailler avec un simple clic et à main levée.
+
+Cet outil permet de travailler avec plusieurs tailles.
+
+Cet outil permet de choisir des couleurs.
+
+Voir aussi : Couleur et blanc & Tramage (garder la couleur).
+
+-------------------------------------------------------------------------------
+
+                               Tux Paint 0.9.35
+

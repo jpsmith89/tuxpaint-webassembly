@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BUNDLE=TuxPaint-$(uname -m).app
+
+if [[ -d "${BUNDLE}" ]]; then
+    cd "${BUNDLE}/Contents" && FONTCONFIG_PATH=Resources/etc fc-list
+else
+    echo "./${BUNDLE}: No such folder" 1>&2
+fi

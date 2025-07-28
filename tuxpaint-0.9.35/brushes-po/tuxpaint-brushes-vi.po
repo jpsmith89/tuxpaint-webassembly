@@ -1,0 +1,97 @@
+# Tuxpaint-brushes [Language] translation.
+# Copyright (C) 2024-2024
+# This file is distributed under the same license as the Tuxpaint package.
+# Cas Pascal <casboi86@gmail.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tuxpaint-brushes\n"
+"Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
+"POT-Creation-Date: 2024-10-21 06:46:00+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Cas Pascal <casboi86@gmail.com>\n"
+"Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../data/brushes/acrylic.txt
+msgid "Paint with a blotty brush that looks like acrylic paint."
+msgstr "Vẽ bằng kiểu chổi lem, giống như vẽ bằng cọ acrylic."
+
+#: ../data/brushes/arrow.txt
+msgid "The arrow points the direction you draw."
+msgstr "Các mũi tên sẽ chỉ theo đường em vẽ."
+
+#: ../data/brushes/arrow_triangles.txt
+msgid "The triangle points the direction you draw."
+msgstr "Các hình tam giác sẽ chỉ theo đường em vẽ."
+
+#: ../data/brushes/critter_dog.txt
+msgid "The dog chases where you draw."
+msgstr "Chú chó sẽ chạy theo đường em vẽ."
+
+#: ../data/brushes/critter_kuroneko.txt
+msgid "The cat chases where you draw."
+msgstr "Con mèo sẽ chạy theo đường em vẽ."
+
+#: ../data/brushes/critter_squirrel.txt
+msgid "The squirrel runs where you draw."
+msgstr "Con sóc sẽ chạy theo đường em vẽ."
+
+#: ../data/brushes/fluff.txt ../data/brushes/fluff_gradient.txt
+msgid "Fluffy circles, great for drawing clouds."
+msgstr "Vẽ các hình tròn bồng bềnh, dùng để vẽ mây."
+
+#: ../data/brushes/footprints-human-shoes.txt
+msgid "Paint footsteps with shoes on your picture."
+msgstr "Vẽ các bước giày lên tranh."
+
+#: ../data/brushes/footprints-human.txt
+msgid "Paint barefoot footsteps on your picture."
+msgstr "Vẽ các bước chân lên tranh."
+
+#: ../data/brushes/footprints-paws.txt
+msgid "Paint pawprints on your picture."
+msgstr "Vẽ các vết chân thú cưng lên tranh."
+
+#: ../data/brushes/impasto.txt
+msgid "Impasto (\"mixture\"), a technique that involves applying thick layers of paint, making brush strokes visible."
+msgstr ""
+
+#: ../data/brushes/inksplat.txt
+msgid "Paint random ink splats on your picture."
+msgstr "Vẽ các vết mực tung tóa lên tranh."
+
+#: ../data/brushes/lines-angled.txt
+msgid "Hash marks that draw perpendicular to the direction your painting."
+msgstr "Các vết gạch vẽ vuông góc so với hướng vẽ của em."
+
+#: ../data/brushes/pencil.txt
+msgid "This draws a pencil effect that follows the direction of your strokes."
+msgstr "Chổi này vẽ một đường bút chì theo hướng vẽ của em."
+
+#: ../data/brushes/sparkles.txt
+msgid "Paint with sparkles!"
+msgstr "Vẽ các hạt lấp lánh!"
+
+#: ../data/brushes/spiral.txt
+msgid "Paint with a rotating spiral."
+msgstr "Vẽ với các đường xoáy."
+
+#: ../data/brushes/spray.txt
+msgid "Paint with a random spray effect."
+msgstr "Vẽ các vết xịt."
+
+#: ../data/brushes/tiny.txt
+msgid "A tiny, 1-by-1 pixel brush."
+msgstr "Một cái chổi vẽ bé xíu! To 1 điểm ảnh."
+
+#: ../data/brushes/vine.txt
+msgid "Draw with leafy vines."
+msgstr "Vẽ các lá cây."
+
+#: ../data/brushes/watercolor-texture.txt
+msgid "Watercolor splotches."
+msgstr ""

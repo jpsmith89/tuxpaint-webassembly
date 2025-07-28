@@ -1,0 +1,238 @@
+Guide de démarrage rapide 0.9.35 pour Tux Paint
+
+                            ### Outils (dessin) ###
+
+## 🖌Peindre ##
+
+  * Choisissez un pinceau sur la droite.
+  * Certains pinceaux sont animés 🎞, d'autres directionnels ✲, certains ont les
+    deux propriétés.
+  * Change l'espacement entre les coups de pinceau à l'aide des barres 📶 en bas
+    à droite.
+  * Choisir une couleur (voir "Couleurs").
+  * Cliquez/tapez et promenez-vous sur le canevas pour peindre.
+
+## ⌧Tampons ##
+
+  * Changez de catégories avec les flèches ⇦⇨ en bas à droite..
+  * Choisisez un tampon sur la droite.
+  * De nombreux tampons peuvent être affichés sous forme d'image miroir 🪞, et/
+    ou inversés verticalement ↕ à l'aide des boutons de commande en bas à
+    droite.
+  * On peut choisir la couleur de certains tampons (voir "Couleurs").
+  * Change la taille du tampon avec les barres 📶 en bas à droite.
+  * Le rotation ⟳ peut être activée si on le désire.
+  * Cliquez/tpez sur le canevas pour placer un tampon.
+      + Si la rotation est activée, balayez pour tourner, et cliquez/tapez pour
+        l'ajouter au dessin.
+  * Certains tampons sont accompagnés d'effets sonores; cliquez sur le
+    haut-parleur 🕪 pour rejouer.
+  * Quelques tampons ont des sons descriptifs; pressez sur le bouton des
+    écouteurs 🎧 pour réentendre.
+
+## ⚟Lignes ##
+
+  * (Voir Peindre)
+  * Cliquez/tapez puis balayez pour tracer une ligne.
+
+## ⭓Formes ##
+
+  * Choisissez une forme sur la droite.
+  * Choisissez si vous voulez étendre la forme à partir du centre ⧈, ou à
+    partir d'un coin ◰, en utilisant les contrôles en bas à droite.
+  * Cliquez/tapez pour positionnez puis balayez pour régler la taille de la
+    forme.
+  * Balayez pour tourner, puis cliquez/tapez pur l'ajouter au dessin.
+
+## 🄰Texte ##
+
+  * Choisissez une fonte sur la droite.
+  * Choisissez si vous voulez que le texte soit en gras 𝗔 et/ou en italique 𝘈,
+    en utilisant les contrôles en bas à droite.
+  * Changez la taille du texte en utilisant les flèches haut 🡁 et bas 🡃 en bas
+    à droite.
+  * Choisir une couleur (voir "Couleurs").
+  * Cliquez/tapez sur le canevas pour positionner un curseur d'insertion.
+  * Entre du texte soit via votre clavier soit par le clavier virtuel.
+  * Cliquez/tapez sur le canevas si vous voulez repositionner le texte.
+  * Pressez [Entrée]/[Retour] ou cliquez/tapez ⮨ pour ajouter du texte au
+    dessin et commencer à entrée plus de texte une ligne au-dessous.
+  * Ou bien, pressez [Tab] ou cliquez/tapez ou ⟷ pour ajouter du texte au
+    dessin et continuer un texte immédiatement à sa droite.
+  * Pressez [Control]+[V] ou cliquer/taper "Paste" pour copier le presse-papier
+  * Utiliser clavier virtuel sur écran :
+      + "Cmp" peut être utilisé pour composer des caractères, par ex. "Cmp ' a"
+        donne á.
+      + "AltGr" permet d'accéder rapidement à plus de caractères.
+      + Les flèches gauche/droite permet la bascule entre des dispositions de
+        clavier (par ex."QWERTY" vs. "ABC")
+
+## 🅰Étiquette ##
+
+  * (Voir texte)
+  * Les étiquettes flottent 'au dessus' du dessin; vous ne pouvez pas peindre
+    ou mettre un tampon par dessus, appliquer des effets magiques, et ...
+  * Les étiquettes peuvent être éditées, repositionnées et changer de style
+    après avoir été ajoutées au dessin.
+  * Cliquez/tapez sur le bouton ☝ en bas à droite pour choisir une étiquette.
+    Cliquez/tapez sur l'étiquette que vous souhaitez modifier, puis cliquez/
+    tapez autre part dans le canevas pour repositionner, ou changer la police,
+    le style, la couleur et/ou éditer le texte.
+  * Ou bien, utilisez le bouton 🖑 en bas à droite pour "écraser" une étiquette,
+    en l'appliquant sur le canevas; on ne pourra plus l'éditer avec l'outil
+    étiquette.
+
+## 🪣Remplir ##
+
+  * Choisissez un mode de remplissage sur la droite.
+  * Choisir une couleur (voir "Couleurs").
+  * Cliquez/tapez 'et balayez avec les modes Pinceau et Ligne) pour remplir une
+    surface du dessin avec une couleur.
+      + Uni - 'Inonde' une surface avec une couleur unie
+      + Pinceau - Peint avec une couleur unie, sans aller au dehors de la
+        surface choisie
+      + Linéaire - Remplit la surface avec un gradient linéaire 'balayez pour
+        choisir l'angle et le gradient)
+      + Radial - Remplit la surface avec une gradationtion radiale, centrée à
+        l'endroit où vous avez cliqué/tapé
+      + Mis en forme - Remplit la surface avec une gradation qui suit les
+        contours de la surface à remplir
+      + Gomme - Remplace une aire par la couleur de fond, ou bien l'image
+        d'arrière-plan de 'Démarrage' ou 'Modèle'
+
+## 🪄Magie ##
+
+  * Choisissez un outil magique sur la droite.
+  * Changez de catégories avec les flèches ⇦⇨ en bas à droite..
+  * Certains outils magiques dessinent ou appliquent des effets en cliquant/
+    tapant et balayany 〰🪄, d'autres affectent tout le dessin 🖻🪄 et d'autres
+    offrent les deux options; utilisez les contrôles en bas à droite.
+  * Quelques outils magiques peuvent faire varier la taille; utilisez les bars
+    📶 en bas à droite.
+  * Certains outils magiques vous permettent de choisir leur couleur.
+
+## 🖓Défaire ##
+
+  * Utilisez pour annuler les actions récentes (peut être répété).
+  * Raccourci : [Control]+[Z]
+
+## 🖒Refaire ##
+
+  * Utilisez pour refaire des actions annulées (peut être répété).
+  * Raccourci : [Control]+[R]
+
+## ◪Gomme ##
+
+  * Choisissez la taille et la forme de la gomme sur la droite.
+  * Cliquez/tapez et balayez pour effacer des parties de l'image (couleur unie,
+    ou image de démarrage ou modèle).
+  * Raccourci : [X] et cliquez/tapez sur le dessin (pas toujours disponible)
+
+                          ### Outils (Contrôles) ###
+
+## 🗏Nouveau ##
+
+  * Choisissez une couleur unie, une image de démarrage ou une image modèle
+    pour commencer.
+      + Les images de démarrage permettent de dessiner "sous" l'image (par ex.
+        le contour pour un livre de coloriage), parfois avec un arrière plan
+        également.
+      + Les images modèles servent à commencer (arrière plan seulement).
+      + L'outil Gomme ◪ révèle l'arrière plan uni, ou l'image de démarrage/
+        image modèle.
+  * Cliquez/tapez "🕮⮫Open" pour commencer un nouveau dessin.
+  * Cliquez/tapez "⤺Back" pour annuler et revenir à votre dessin en cours.
+  * Raccourci : [Control]+[N]
+
+## 🕮⮫Ouvrir ##
+
+  * Choisissez un dessin déjà sauvegardé pour l'ouvrir (ou pour l'exporter ou
+    l'effacer).
+  * Cliquez/tapez "🕮⮫Open" pour ouvrir le dessin sauvegardé et continuer à
+    travailler dessus.
+  * Cliquez/tapez "🗏⮫Export" pour sauvegarder le dessin dans le dossier
+    "Images" de votre système.
+  * Cliquez/Tapez "🗑Erase" pour mettre le dessin dans la Corbeille de votre
+    système.
+  * Cliquez/tapez "⤺Back" pour annuler et revenir à votre dessin en cours.
+  * Cliqez/Tapez "📽Slides" pour basculer en mode diaporama :
+      + Cliquez/Tapez sur deux ou plus dessins déjà sauvegardés, dans l'ordre
+        où vous souhaitez les voir. Des chiffres apparaîtrons dessus.
+      + Choisissez la vitesse de défilement en utilisant les barres 📶 en bas à
+        gauche.
+      + Cliquez/Tapez "⯈Play" pour regarder votre diaporama.
+      + Ou, cliquez/tapez "🎞GIF Export" pour sauvegarder un GIF animé dans le
+        dossier "Images" de votre système.
+      + Cliquez /tapez sur "⤺Retour" pour revenir à la boîte de dialogue
+        "Ouvrir".
+  * Cliquez/Tapze sur "🖻⮫🗏Modèle" pour changer de dessin avec un nouveau
+    modèle.
+  * Raccourci : [Control]+[O]
+
+## 🕮⮪Sauvegarder ##
+
+  * Cliquez/Tapez pour sauvegarder votre dessin.
+  * Si vous aviez déjà sauvegardé, on vous demandera si on écrase la précédente
+    sauvegarde (faite avec "Fichier -> sauvegarder") ou bien créer une nouvelle
+    sauvegarde (avec "Fichier - Sauvegarder comme ..")
+  * Raccourci : [Control]+[S]
+
+## 🖶Imprimer ##
+
+  * Cliquez/tapez pour imprimer votre dessin.
+  * Maintenez appuyé [Alt] ou [Option] tout en cliquant/tapant pour obtenir une
+    boîte de dialogue pour l'impression, si c'est disponible.
+  * Raccourci : [Control]+[P]
+
+## 🗙Quitter ##
+
+  * Cliquer/Taper pour quitter Tux Paint.
+  * Raccourci : [Escape]
+
+                               ### Couleurs ###
+
+  * Cliquez/tapez pour choisir une couleur à utiliser pour les outils Peindre,
+    Lignes et Formes, et les Tampons et outils Magie qui fonctionnent avec des
+    couleurs.
+  * Utilisez le bouton pipette/sélecteur de couleur 💉 pour choisir une couleur
+    provenant d'un pixel de votre dessin en cours.
+      + Raccourci : Quand les couleurs sont disponibles, pressez [Control] et
+        cliquez/tapez sur votre dessin, pour extraire rapidement une couleur de
+        votre dessin.
+  * Cliquez/tapez le bouton arc-en-ciel 🌈 pour choisir une couleur arbitraire.
+      + Cliquez/tapez dans le carré de l'arc-en-ciel pour extraire une couleur
+        (teinte et saturation).
+      + Cliquez/tapez sur la barre de gradient de gris pour ajuster la
+        brillance (en valeur).
+      + Cliquez/tapez la case à cocher ✓ pour accepter.
+      + Cliquez/tapez "⤺Back" pour annuler et rejeter la palette.
+      + Vous pouvez prendre la couleur déjà choisie (si c'est le cas), la
+        couleur dans la pipette, dans le sélecteur de couleur, dans le
+        mélangeur de couleur, en cliquant sur les flèces colorées ⇫.
+  * Cliquez/tapez sur le bouton de la palette de peinture 🎨 pour créer une
+    couleur issue du mélange de couleurs primaires : rouge, jaune et bleu et
+    blanc (pour la teinte), gris (pour le ton) et noir (pour ombrer).
+      + Cliquez/tapez la case à cocher ✓ pour accepter.
+      + Le mélange de couleur possède ses propres options 🖓Défaire et 🖒Refaire.
+      + Cliquez/tapez "🗑Clear" pour redémarrer sans couleurs mélangées.
+      + Cliquez/tapez sur "⤺Back" pour annuler et abandonner le mélangeur de
+        couleur.
+
+                     ### Raccourcit quand on dessine : ###
+
+  * [Control+Cliquez/tapez - accès rapide à la pipette/sélecteur de couleur 💉
+  * [X]+Cliquez/tapez - accès rapide à la gomme ◪
+  * [Control]+[Z] - 🖓Défaire
+  * [Control]+[R] - 🖒Refaire
+  * [Control]+[N] - 🗏Nouveau
+  * [Control]+[O] - 🕮⮫Ouvrir
+  * [Control]+[S] - 🕮⮪Sauvegarder
+  * [Control]+[P] - 🖶Imprimer
+  * [Alt]+[S] - Basculer effets sonores on/off
+  * [Escape] - ⤺Arrière ou 🗙Quitter
+
+Note : Sur macOS utilisez la touche [⌘ (Command)] à la place de la touche
+[Control].
+
+Dernière mise à jour : mai 26, 2025
+
