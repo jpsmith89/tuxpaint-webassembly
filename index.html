@@ -160,12 +160,25 @@
         .instructions li {
             margin: 5px 0;
         }
+
+        .test-message {
+            background: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1 class="title">🎨 Tux Paint WebAssembly</h1>
         <p class="subtitle">Draw, create, and have fun!</p>
+        
+        <div class="test-message">
+            ✅ Interface Loaded Successfully! This is the NEW Tux Paint interface!
+        </div>
         
         <div class="loading" id="loading">
             <div class="spinner"></div>
@@ -269,12 +282,12 @@
             document.getElementById('status').textContent = message;
         }
 
-        // Load Tux Paint WebAssembly
+        // Load Tux Paint WebAssembly with cache busting
         document.getElementById('loading').style.display = 'block';
         
-        // Create script element to load the WebAssembly module
+        // Create script element to load the WebAssembly module with cache busting
         const script = document.createElement('script');
-        script.src = 'tuxpaint.js';
+        script.src = 'tuxpaint.js?v=' + Date.now(); // Cache busting
         script.async = true;
         
         script.onload = function() {
@@ -292,6 +305,11 @@
         };
         
         document.head.appendChild(script);
+
+        // Test drawing functionality immediately
+        setTimeout(() => {
+            updateStatus('Drawing test: Try drawing on the canvas! 🖌️');
+        }, 1000);
     </script>
 </body>
 </html>
