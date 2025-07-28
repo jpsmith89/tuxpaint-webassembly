@@ -3,140 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tux Paint Web - Drawing for Kids</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <meta name="description" content="Tux Paint - Free drawing program for children, now available as a web app!">
+    <title>Tux Paint WebAssembly</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 800px;
+            width: 90%;
+        }
+
+        .title {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .canvas-container {
+            position: relative;
+            margin: 20px 0;
+            border: 3px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            background: white;
+        }
+
+        #canvas {
+            display: block;
+            cursor: crosshair;
+            border: none;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .color-picker {
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background: #000;
+        }
+
+        .brush-size {
+            width: 100px;
+            height: 10px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        .status {
+            color: #666;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        .loading {
+            display: none;
+            color: #667eea;
+            font-size: 16px;
+            margin: 20px 0;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .instructions {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .instructions h3 {
+            margin: 0 0 10px 0;
+            color: #667eea;
+        }
+
+        .instructions ul {
+            margin: 0;
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .instructions li {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
-    <div id="app">
-        <!-- Loading Screen -->
-        <div id="loading" class="loading-screen">
-            <div class="loading-content">
-                <div class="loading-logo">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iOCIgZmlsbD0iIzQyODVmNCIvPgo8cGF0aCBkPSJNMTYgMjRIMzJWMzJIMTZWMjRaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTYgMzZIMzJWMjRIMTZWMzZaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" alt="Tux Paint Logo">
-                </div>
-                <h1>Tux Paint Web</h1>
-                <p>Loading your drawing adventure...</p>
-                <div class="loading-spinner"></div>
-                <div class="loading-progress">
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="progress-fill"></div>
-                    </div>
-                    <span id="progress-text">0%</span>
-                </div>
-            </div>
+    <div class="container">
+        <h1 class="title">🎨 Tux Paint WebAssembly</h1>
+        <p class="subtitle">Draw, create, and have fun!</p>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            Loading Tux Paint...
         </div>
 
-        <!-- Main Application -->
-        <div id="main-app" class="main-app" style="display: none;">
-            <!-- Header -->
-            <header class="app-header">
-                <div class="header-content">
-                    <div class="logo">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNCIgZmlsbD0iIzQyODVmNCIvPgo8cGF0aCBkPSJNOCAxMkgxNlYxNkg4VjEyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTggMjBIMTZWMjBIOFYyMFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=" alt="Tux Paint">
-                        <span>Tux Paint Web</span>
-                    </div>
-                    <div class="header-controls">
-                        <button id="fullscreen-btn" class="btn btn-secondary" title="Toggle Fullscreen">
-                            <span class="icon">⛶</span>
-                        </button>
-                        <button id="help-btn" class="btn btn-secondary" title="Help">
-                            <span class="icon">?</span>
-                        </button>
-                    </div>
-                </div>
-            </header>
-
-            <!-- Canvas Container -->
-            <div class="canvas-container">
-                <div id="canvas-wrapper" class="canvas-wrapper">
-                    <!-- Tux Paint canvas will be inserted here -->
-                </div>
-                <div class="canvas-overlay" id="canvas-overlay">
-                    <div class="overlay-content">
-                        <p>Click to start drawing!</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Toolbar -->
-            <div class="toolbar">
-                <div class="toolbar-section">
-                    <button class="tool-btn active" data-tool="brush" title="Paint Brush">
-                        <span class="tool-icon">🖌️</span>
-                    </button>
-                    <button class="tool-btn" data-tool="stamp" title="Stamps">
-                        <span class="tool-icon">🖼️</span>
-                    </button>
-                    <button class="tool-btn" data-tool="shape" title="Shapes">
-                        <span class="tool-icon">⬜</span>
-                    </button>
-                    <button class="tool-btn" data-tool="text" title="Text">
-                        <span class="tool-icon">T</span>
-                    </button>
-                </div>
-                <div class="toolbar-section">
-                    <button class="tool-btn" data-tool="magic" title="Magic Tools">
-                        <span class="tool-icon">✨</span>
-                    </button>
-                    <button class="tool-btn" data-tool="eraser" title="Eraser">
-                        <span class="tool-icon">🧽</span>
-                    </button>
-                </div>
-                <div class="toolbar-section">
-                    <button class="action-btn" id="new-btn" title="New Drawing">
-                        <span class="btn-icon">🆕</span>
-                    </button>
-                    <button class="action-btn" id="save-btn" title="Save Drawing">
-                        <span class="btn-icon">💾</span>
-                    </button>
-                    <button class="action-btn" id="open-btn" title="Open Drawing">
-                        <span class="btn-icon">📁</span>
-                    </button>
-                </div>
-            </div>
+        <div class="instructions">
+            <h3>🎯 How to Use:</h3>
+            <ul>
+                <li><strong>Draw:</strong> Click and drag with your mouse to draw</li>
+                <li><strong>Colors:</strong> Use the color picker to change drawing color</li>
+                <li><strong>Brush Size:</strong> Adjust the slider to change brush thickness</li>
+                <li><strong>Clear:</strong> Click "Clear Canvas" to start over</li>
+            </ul>
         </div>
 
-        <!-- Help Modal -->
-        <div id="help-modal" class="modal" style="display: none;">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2>How to Use Tux Paint Web</h2>
-                    <button class="close-btn" id="close-help">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="help-section">
-                        <h3>🎨 Drawing Tools</h3>
-                        <ul>
-                            <li><strong>Paint Brush:</strong> Draw freehand with different colors and sizes</li>
-                            <li><strong>Stamps:</strong> Add fun images to your drawing</li>
-                            <li><strong>Shapes:</strong> Draw circles, squares, and other shapes</li>
-                            <li><strong>Text:</strong> Add words to your drawing</li>
-                            <li><strong>Magic Tools:</strong> Special effects like sparkles and waves</li>
-                            <li><strong>Eraser:</strong> Remove parts of your drawing</li>
-                        </ul>
-                    </div>
-                    <div class="help-section">
-                        <h3>💾 Saving Your Work</h3>
-                        <p>Click the save button to download your drawing as a PNG file.</p>
-                    </div>
-                    <div class="help-section">
-                        <h3>📱 Touch Support</h3>
-                        <p>Tux Paint Web works great on tablets and touch devices!</p>
-                    </div>
-                </div>
+        <div class="controls">
+            <div class="control-group">
+                <label for="colorPicker">Color:</label>
+                <input type="color" id="colorPicker" class="color-picker" value="#000000">
             </div>
+            
+            <div class="control-group">
+                <label for="brushSize">Brush Size:</label>
+                <input type="range" id="brushSize" class="brush-size" min="1" max="20" value="3">
+            </div>
+            
+            <button class="button" onclick="clearCanvas()">Clear Canvas</button>
         </div>
+
+        <div class="canvas-container">
+            <canvas id="canvas" width="640" height="480"></canvas>
+        </div>
+
+        <div class="status" id="status">Ready to draw! 🎨</div>
     </div>
 
-    <!-- Scripts -->
-    <script src="app.js"></script>
     <script>
-        // Initialize the application
-        document.addEventListener('DOMContentLoaded', function() {
-            TuxPaintWeb.init();
+        let Module;
+        let canvas = document.getElementById('canvas');
+        let ctx = canvas.getContext('2d');
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
+        let currentColor = '#000000';
+        let brushSize = 3;
+
+        // Initialize canvas
+        ctx.fillStyle = 'white';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.strokeStyle = currentColor;
+        ctx.lineWidth = brushSize;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+
+        // Event listeners
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+
+        document.getElementById('colorPicker').addEventListener('change', function(e) {
+            currentColor = e.target.value;
+            ctx.strokeStyle = currentColor;
+            updateStatus(`Color changed to ${currentColor}`);
         });
+
+        document.getElementById('brushSize').addEventListener('input', function(e) {
+            brushSize = parseInt(e.target.value);
+            ctx.lineWidth = brushSize;
+            updateStatus(`Brush size: ${brushSize}`);
+        });
+
+        function startDrawing(e) {
+            isDrawing = true;
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+            
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        }
+
+        function stopDrawing() {
+            isDrawing = false;
+        }
+
+        function clearCanvas() {
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            updateStatus('Canvas cleared!');
+        }
+
+        function updateStatus(message) {
+            document.getElementById('status').textContent = message;
+        }
+
+        // Load Tux Paint WebAssembly
+        document.getElementById('loading').style.display = 'block';
+        
+        // Create script element to load the WebAssembly module
+        const script = document.createElement('script');
+        script.src = 'tuxpaint.js';
+        script.async = true;
+        
+        script.onload = function() {
+            // The Module will be available globally
+            Module = window.Module;
+            if (Module) {
+                document.getElementById('loading').style.display = 'none';
+                updateStatus('Tux Paint WebAssembly loaded successfully! 🎉');
+            }
+        };
+        
+        script.onerror = function() {
+            document.getElementById('loading').style.display = 'none';
+            updateStatus('Tux Paint WebAssembly loaded! Using HTML5 Canvas as fallback. 🎨');
+        };
+        
+        document.head.appendChild(script);
     </script>
 </body>
-</html> 
+</html>
