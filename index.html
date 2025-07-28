@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tux Paint Web - Drawing for Kids</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="Tux Paint - Free drawing program for children, now available as a web app!">
+</head>
+<body>
+    <div id="app">
+        <!-- Loading Screen -->
+        <div id="loading" class="loading-screen">
+            <div class="loading-content">
+                <div class="loading-logo">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iOCIgZmlsbD0iIzQyODVmNCIvPgo8cGF0aCBkPSJNMTYgMjRIMzJWMzJIMTZWMjRaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTYgMzZIMzJWMjRIMTZWMzZaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" alt="Tux Paint Logo">
+                </div>
+                <h1>Tux Paint Web</h1>
+                <p>Loading your drawing adventure...</p>
+                <div class="loading-spinner"></div>
+                <div class="loading-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <span id="progress-text">0%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Application -->
+        <div id="main-app" class="main-app" style="display: none;">
+            <!-- Header -->
+            <header class="app-header">
+                <div class="header-content">
+                    <div class="logo">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNCIgZmlsbD0iIzQyODVmNCIvPgo8cGF0aCBkPSJNOCAxMkgxNlYxNkg4VjEyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTggMjBIMTZWMjBIOFYyMFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=" alt="Tux Paint">
+                        <span>Tux Paint Web</span>
+                    </div>
+                    <div class="header-controls">
+                        <button id="fullscreen-btn" class="btn btn-secondary" title="Toggle Fullscreen">
+                            <span class="icon">⛶</span>
+                        </button>
+                        <button id="help-btn" class="btn btn-secondary" title="Help">
+                            <span class="icon">?</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Canvas Container -->
+            <div class="canvas-container">
+                <div id="canvas-wrapper" class="canvas-wrapper">
+                    <!-- Tux Paint canvas will be inserted here -->
+                </div>
+                <div class="canvas-overlay" id="canvas-overlay">
+                    <div class="overlay-content">
+                        <p>Click to start drawing!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toolbar -->
+            <div class="toolbar">
+                <div class="toolbar-section">
+                    <button class="tool-btn active" data-tool="brush" title="Paint Brush">
+                        <span class="tool-icon">🖌️</span>
+                    </button>
+                    <button class="tool-btn" data-tool="stamp" title="Stamps">
+                        <span class="tool-icon">🖼️</span>
+                    </button>
+                    <button class="tool-btn" data-tool="shape" title="Shapes">
+                        <span class="tool-icon">⬜</span>
+                    </button>
+                    <button class="tool-btn" data-tool="text" title="Text">
+                        <span class="tool-icon">T</span>
+                    </button>
+                </div>
+                <div class="toolbar-section">
+                    <button class="tool-btn" data-tool="magic" title="Magic Tools">
+                        <span class="tool-icon">✨</span>
+                    </button>
+                    <button class="tool-btn" data-tool="eraser" title="Eraser">
+                        <span class="tool-icon">🧽</span>
+                    </button>
+                </div>
+                <div class="toolbar-section">
+                    <button class="action-btn" id="new-btn" title="New Drawing">
+                        <span class="btn-icon">🆕</span>
+                    </button>
+                    <button class="action-btn" id="save-btn" title="Save Drawing">
+                        <span class="btn-icon">💾</span>
+                    </button>
+                    <button class="action-btn" id="open-btn" title="Open Drawing">
+                        <span class="btn-icon">📁</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Help Modal -->
+        <div id="help-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>How to Use Tux Paint Web</h2>
+                    <button class="close-btn" id="close-help">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="help-section">
+                        <h3>🎨 Drawing Tools</h3>
+                        <ul>
+                            <li><strong>Paint Brush:</strong> Draw freehand with different colors and sizes</li>
+                            <li><strong>Stamps:</strong> Add fun images to your drawing</li>
+                            <li><strong>Shapes:</strong> Draw circles, squares, and other shapes</li>
+                            <li><strong>Text:</strong> Add words to your drawing</li>
+                            <li><strong>Magic Tools:</strong> Special effects like sparkles and waves</li>
+                            <li><strong>Eraser:</strong> Remove parts of your drawing</li>
+                        </ul>
+                    </div>
+                    <div class="help-section">
+                        <h3>💾 Saving Your Work</h3>
+                        <p>Click the save button to download your drawing as a PNG file.</p>
+                    </div>
+                    <div class="help-section">
+                        <h3>📱 Touch Support</h3>
+                        <p>Tux Paint Web works great on tablets and touch devices!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+    <script>
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            TuxPaintWeb.init();
+        });
+    </script>
+</body>
+</html> 
