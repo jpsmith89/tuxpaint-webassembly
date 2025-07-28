@@ -5,132 +5,256 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tux Paint WebAssembly</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            background: #4A90E2;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .tuxpaint-container {
+            display: flex;
+            height: 100vh;
+            background: #4A90E2;
+        }
+
+        /* Left Sidebar - Tools */
+        .tools-sidebar {
+            width: 120px;
+            background: #2C5AA0;
+            border-right: 3px solid #1E3A8A;
+            display: flex;
+            flex-direction: column;
+            padding: 10px 5px;
+        }
+
+        .tool-button {
+            width: 100%;
+            height: 50px;
+            margin: 2px 0;
+            background: #3B82F6;
+            border: 2px solid #1E40AF;
+            border-radius: 8px;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            transition: all 0.2s;
         }
 
-        .container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            max-width: 800px;
-            width: 90%;
+        .tool-button:hover {
+            background: #60A5FA;
+            transform: translateY(-1px);
         }
 
-        .title {
-            color: #333;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: bold;
+        .tool-button.active {
+            background: #F59E0B;
+            border-color: #D97706;
         }
 
-        .subtitle {
-            color: #666;
-            font-size: 1.2em;
-            margin-bottom: 30px;
+        .tool-button.disabled {
+            background: #6B7280;
+            border-color: #4B5563;
+            cursor: not-allowed;
+        }
+
+        .tool-icon {
+            font-size: 20px;
+            margin-bottom: 2px;
+        }
+
+        /* Main Drawing Area */
+        .drawing-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: #E5E7EB;
         }
 
         .canvas-container {
-            position: relative;
-            margin: 20px 0;
-            border: 3px solid #ddd;
-            border-radius: 10px;
-            overflow: hidden;
-            background: white;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: #F3F4F6;
         }
 
         #canvas {
-            display: block;
+            border: 3px solid #374151;
+            border-radius: 8px;
+            background: white;
             cursor: crosshair;
-            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .controls {
+        /* Right Sidebar - Colors and Options */
+        .options-sidebar {
+            width: 200px;
+            background: #2C5AA0;
+            border-left: 3px solid #1E3A8A;
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 20px 0;
-            flex-wrap: wrap;
+            flex-direction: column;
+            padding: 10px;
         }
 
-        .control-group {
+        .color-palette {
+            background: #3B82F6;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        .color-palette h3 {
+            color: white;
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+
+        .color-button {
+            width: 35px;
+            height: 35px;
+            border: 2px solid #1E40AF;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .color-button:hover {
+            transform: scale(1.1);
+        }
+
+        .color-button.active {
+            border-color: #F59E0B;
+            border-width: 3px;
+        }
+
+        .brush-selector {
+            background: #3B82F6;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        .brush-selector h3 {
+            color: white;
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .brush-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .brush-option {
+            background: #60A5FA;
+            border: 2px solid #1E40AF;
+            border-radius: 6px;
+            padding: 8px;
+            color: white;
+            font-size: 12px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .brush-option:hover {
+            background: #93C5FD;
+        }
+
+        .brush-option.active {
+            background: #F59E0B;
+            border-color: #D97706;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .action-button {
+            background: #EF4444;
+            border: 2px solid #DC2626;
+            border-radius: 6px;
+            padding: 10px;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .action-button:hover {
+            background: #F87171;
+        }
+
+        .action-button.secondary {
+            background: #10B981;
+            border-color: #059669;
+        }
+
+        .action-button.secondary:hover {
+            background: #34D399;
+        }
+
+        /* Status Bar */
+        .status-bar {
+            background: #1E40AF;
+            color: white;
+            padding: 8px 15px;
+            font-size: 14px;
+            text-align: center;
+            border-top: 2px solid #1E3A8A;
+        }
+
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #4A90E2;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            z-index: 1000;
         }
 
-        .color-picker {
-            width: 40px;
-            height: 40px;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            background: #000;
-        }
-
-        .brush-size {
-            width: 100px;
-            height: 10px;
-            border-radius: 5px;
-            background: #ddd;
-            outline: none;
-            cursor: pointer;
-        }
-
-        .button {
-            background: linear-gradient(45deg, #667eea, #764ba2);
+        .loading-content {
+            text-align: center;
             color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
         }
 
-        .button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .button:active {
-            transform: translateY(0);
-        }
-
-        .status {
-            color: #666;
-            font-size: 14px;
-            margin-top: 15px;
-        }
-
-        .loading {
-            display: none;
-            color: #667eea;
-            font-size: 16px;
-            margin: 20px 0;
-        }
-
-        .spinner {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #667eea;
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #E5E7EB;
+            border-top: 5px solid #F59E0B;
             border-radius: 50%;
             animation: spin 1s linear infinite;
-            margin-right: 10px;
+            margin: 0 auto 20px;
         }
 
         @keyframes spin {
@@ -138,82 +262,121 @@
             100% { transform: rotate(360deg); }
         }
 
-        .instructions {
-            background: rgba(102, 126, 234, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            margin: 20px 0;
-            color: #333;
-        }
-
-        .instructions h3 {
-            margin: 0 0 10px 0;
-            color: #667eea;
-        }
-
-        .instructions ul {
-            margin: 0;
-            padding-left: 20px;
-            text-align: left;
-        }
-
-        .instructions li {
-            margin: 5px 0;
-        }
-
-        .test-message {
-            background: #4CAF50;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px 0;
-            font-weight: bold;
+        .hidden {
+            display: none !important;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="title">🎨 Tux Paint WebAssembly</h1>
-        <p class="subtitle">Draw, create, and have fun!</p>
-        
-        <div class="test-message">
-            ✅ Interface Loaded Successfully! This is the NEW Tux Paint interface!
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h2>🎨 Tux Paint WebAssembly</h2>
+            <p>Loading your drawing adventure...</p>
         </div>
-        
-        <div class="loading" id="loading">
-            <div class="spinner"></div>
-            Loading Tux Paint...
-        </div>
+    </div>
 
-        <div class="instructions">
-            <h3>🎯 How to Use:</h3>
-            <ul>
-                <li><strong>Draw:</strong> Click and drag with your mouse to draw</li>
-                <li><strong>Colors:</strong> Use the color picker to change drawing color</li>
-                <li><strong>Brush Size:</strong> Adjust the slider to change brush thickness</li>
-                <li><strong>Clear:</strong> Click "Clear Canvas" to start over</li>
-            </ul>
-        </div>
-
-        <div class="controls">
-            <div class="control-group">
-                <label for="colorPicker">Color:</label>
-                <input type="color" id="colorPicker" class="color-picker" value="#000000">
+    <!-- Main Tux Paint Interface -->
+    <div id="tuxpaintInterface" class="tuxpaint-container hidden">
+        <!-- Left Sidebar - Tools -->
+        <div class="tools-sidebar">
+            <div class="tool-button active" data-tool="brush">
+                <div class="tool-icon">🖌️</div>
+                <div>Paint</div>
             </div>
-            
-            <div class="control-group">
-                <label for="brushSize">Brush Size:</label>
-                <input type="range" id="brushSize" class="brush-size" min="1" max="20" value="3">
+            <div class="tool-button" data-tool="stamp">
+                <div class="tool-icon">🖼️</div>
+                <div>Stamp</div>
             </div>
-            
-            <button class="button" onclick="clearCanvas()">Clear Canvas</button>
+            <div class="tool-button" data-tool="lines">
+                <div class="tool-icon">📏</div>
+                <div>Lines</div>
+            </div>
+            <div class="tool-button" data-tool="shapes">
+                <div class="tool-icon">⬜</div>
+                <div>Shapes</div>
+            </div>
+            <div class="tool-button" data-tool="text">
+                <div class="tool-icon">T</div>
+                <div>Text</div>
+            </div>
+            <div class="tool-button" data-tool="fill">
+                <div class="tool-icon">🪣</div>
+                <div>Fill</div>
+            </div>
+            <div class="tool-button" data-tool="magic">
+                <div class="tool-icon">✨</div>
+                <div>Magic</div>
+            </div>
+            <div class="tool-button" data-tool="eraser">
+                <div class="tool-icon">🧽</div>
+                <div>Eraser</div>
+            </div>
+            <div class="tool-button" data-tool="undo">
+                <div class="tool-icon">↶</div>
+                <div>Undo</div>
+            </div>
+            <div class="tool-button" data-tool="redo">
+                <div class="tool-icon">↷</div>
+                <div>Redo</div>
+            </div>
         </div>
 
-        <div class="canvas-container">
-            <canvas id="canvas" width="640" height="480"></canvas>
+        <!-- Main Drawing Area -->
+        <div class="drawing-area">
+            <div class="canvas-container">
+                <canvas id="canvas" width="640" height="480"></canvas>
+            </div>
+            <div class="status-bar" id="statusBar">
+                Pick a color and a brush shape to draw with.
+            </div>
         </div>
 
-        <div class="status" id="status">Ready to draw! 🎨</div>
+        <!-- Right Sidebar - Colors and Options -->
+        <div class="options-sidebar">
+            <!-- Color Palette -->
+            <div class="color-palette">
+                <h3>Colors</h3>
+                <div class="color-grid">
+                    <div class="color-button active" style="background: #000000;" data-color="#000000"></div>
+                    <div class="color-button" style="background: #FF0000;" data-color="#FF0000"></div>
+                    <div class="color-button" style="background: #00FF00;" data-color="#00FF00"></div>
+                    <div class="color-button" style="background: #0000FF;" data-color="#0000FF"></div>
+                    <div class="color-button" style="background: #FFFF00;" data-color="#FFFF00"></div>
+                    <div class="color-button" style="background: #FF00FF;" data-color="#FF00FF"></div>
+                    <div class="color-button" style="background: #00FFFF;" data-color="#00FFFF"></div>
+                    <div class="color-button" style="background: #FFA500;" data-color="#FFA500"></div>
+                    <div class="color-button" style="background: #800080;" data-color="#800080"></div>
+                    <div class="color-button" style="background: #008000;" data-color="#008000"></div>
+                    <div class="color-button" style="background: #FFC0CB;" data-color="#FFC0CB"></div>
+                    <div class="color-button" style="background: #A52A2A;" data-color="#A52A2A"></div>
+                    <div class="color-button" style="background: #808080;" data-color="#808080"></div>
+                    <div class="color-button" style="background: #C0C0C0;" data-color="#C0C0C0"></div>
+                    <div class="color-button" style="background: #FFFFFF;" data-color="#FFFFFF"></div>
+                    <div class="color-button" style="background: #000000;" data-color="#000000"></div>
+                </div>
+            </div>
+
+            <!-- Brush Selector -->
+            <div class="brush-selector">
+                <h3>Brushes</h3>
+                <div class="brush-options">
+                    <div class="brush-option active" data-size="3">Small</div>
+                    <div class="brush-option" data-size="6">Medium</div>
+                    <div class="brush-option" data-size="12">Large</div>
+                    <div class="brush-option" data-size="20">Extra Large</div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="action-button secondary" id="newButton">🆕 New</button>
+                <button class="action-button secondary" id="openButton">📁 Open</button>
+                <button class="action-button secondary" id="saveButton">💾 Save</button>
+                <button class="action-button" id="quitButton">❌ Quit</button>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -224,92 +387,166 @@
         let lastX = 0;
         let lastY = 0;
         let currentColor = '#000000';
+        let currentTool = 'brush';
         let brushSize = 3;
 
         // Initialize canvas
-        ctx.fillStyle = 'white';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.strokeStyle = currentColor;
-        ctx.lineWidth = brushSize;
-        ctx.lineCap = 'round';
-        ctx.lineJoin = 'round';
+        function initCanvas() {
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = currentColor;
+            ctx.lineWidth = brushSize;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+        }
 
-        // Event listeners
+        // Tool selection
+        document.querySelectorAll('.tool-button').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.tool-button').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                currentTool = this.dataset.tool;
+                updateStatus();
+            });
+        });
+
+        // Color selection
+        document.querySelectorAll('.color-button').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.color-button').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                currentColor = this.dataset.color;
+                ctx.strokeStyle = currentColor;
+                updateStatus();
+            });
+        });
+
+        // Brush size selection
+        document.querySelectorAll('.brush-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.brush-option').forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                brushSize = parseInt(this.dataset.size);
+                ctx.lineWidth = brushSize;
+                updateStatus();
+            });
+        });
+
+        // Action buttons
+        document.getElementById('newButton').addEventListener('click', function() {
+            if (confirm('Start a new drawing?')) {
+                initCanvas();
+                updateStatus('New drawing started!');
+            }
+        });
+
+        document.getElementById('saveButton').addEventListener('click', function() {
+            const link = document.createElement('a');
+            link.download = 'tuxpaint-drawing.png';
+            link.href = canvas.toDataURL();
+            link.click();
+            updateStatus('Drawing saved!');
+        });
+
+        document.getElementById('quitButton').addEventListener('click', function() {
+            if (confirm('Quit Tux Paint?')) {
+                window.close();
+            }
+        });
+
+        // Drawing functionality
         canvas.addEventListener('mousedown', startDrawing);
         canvas.addEventListener('mousemove', draw);
         canvas.addEventListener('mouseup', stopDrawing);
         canvas.addEventListener('mouseout', stopDrawing);
 
-        document.getElementById('colorPicker').addEventListener('change', function(e) {
-            currentColor = e.target.value;
-            ctx.strokeStyle = currentColor;
-            updateStatus(`Color changed to ${currentColor}`);
-        });
-
-        document.getElementById('brushSize').addEventListener('input', function(e) {
-            brushSize = parseInt(e.target.value);
-            ctx.lineWidth = brushSize;
-            updateStatus(`Brush size: ${brushSize}`);
-        });
-
         function startDrawing(e) {
             isDrawing = true;
-            [lastX, lastY] = [e.offsetX, e.offsetY];
+            const rect = canvas.getBoundingClientRect();
+            [lastX, lastY] = [e.clientX - rect.left, e.clientY - rect.top];
         }
 
         function draw(e) {
             if (!isDrawing) return;
             
-            ctx.beginPath();
-            ctx.moveTo(lastX, lastY);
-            ctx.lineTo(e.offsetX, e.offsetY);
-            ctx.stroke();
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            switch (currentTool) {
+                case 'brush':
+                case 'eraser':
+                    ctx.beginPath();
+                    ctx.moveTo(lastX, lastY);
+                    ctx.lineTo(x, y);
+                    ctx.stroke();
+                    break;
+                case 'fill':
+                    // Simple flood fill (not perfect but works for demo)
+                    ctx.fillStyle = currentTool === 'eraser' ? 'white' : currentColor;
+                    ctx.fillRect(x - brushSize/2, y - brushSize/2, brushSize, brushSize);
+                    break;
+            }
             
-            [lastX, lastY] = [e.offsetX, e.offsetY];
+            [lastX, lastY] = [x, y];
         }
 
         function stopDrawing() {
             isDrawing = false;
         }
 
-        function clearCanvas() {
-            ctx.fillStyle = 'white';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            updateStatus('Canvas cleared!');
-        }
-
         function updateStatus(message) {
-            document.getElementById('status').textContent = message;
+            const statusBar = document.getElementById('statusBar');
+            if (message) {
+                statusBar.textContent = message;
+            } else {
+                const toolNames = {
+                    'brush': 'Paint',
+                    'stamp': 'Stamp',
+                    'lines': 'Lines',
+                    'shapes': 'Shapes',
+                    'text': 'Text',
+                    'fill': 'Fill',
+                    'magic': 'Magic',
+                    'eraser': 'Eraser',
+                    'undo': 'Undo',
+                    'redo': 'Redo'
+                };
+                statusBar.textContent = `${toolNames[currentTool]} tool selected. Pick a color and start drawing!`;
+            }
         }
 
-        // Load Tux Paint WebAssembly with cache busting
-        document.getElementById('loading').style.display = 'block';
-        
-        // Create script element to load the WebAssembly module with cache busting
-        const script = document.createElement('script');
-        script.src = 'tuxpaint.js?v=' + Date.now(); // Cache busting
-        script.async = true;
-        
-        script.onload = function() {
-            // The Module will be available globally
-            Module = window.Module;
-            if (Module) {
-                document.getElementById('loading').style.display = 'none';
-                updateStatus('Tux Paint WebAssembly loaded successfully! 🎉');
-            }
-        };
-        
-        script.onerror = function() {
-            document.getElementById('loading').style.display = 'none';
-            updateStatus('Tux Paint WebAssembly loaded! Using HTML5 Canvas as fallback. 🎨');
-        };
-        
-        document.head.appendChild(script);
+        // Load Tux Paint WebAssembly
+        function loadTuxPaint() {
+            const script = document.createElement('script');
+            script.src = 'tuxpaint.js?v=' + Date.now();
+            script.async = true;
+            
+            script.onload = function() {
+                Module = window.Module;
+                if (Module) {
+                    console.log('Tux Paint WebAssembly loaded successfully!');
+                }
+                showInterface();
+            };
+            
+            script.onerror = function() {
+                console.log('Using HTML5 Canvas fallback');
+                showInterface();
+            };
+            
+            document.head.appendChild(script);
+        }
 
-        // Test drawing functionality immediately
-        setTimeout(() => {
-            updateStatus('Drawing test: Try drawing on the canvas! 🖌️');
-        }, 1000);
+        function showInterface() {
+            document.getElementById('loadingScreen').classList.add('hidden');
+            document.getElementById('tuxpaintInterface').classList.remove('hidden');
+            initCanvas();
+            updateStatus();
+        }
+
+        // Initialize
+        loadTuxPaint();
     </script>
 </body>
 </html>
